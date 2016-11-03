@@ -50,7 +50,8 @@ public class MainPokemon {
 
         poke.setNombre(nombreType);
 
-        
+        //Esto te dara el nombre
+        poke.getNombre().getValue();
 
         //System.out.println("Autor");
         // info = teclat.next();
