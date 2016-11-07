@@ -1,5 +1,4 @@
 import generated.NombreType;
-import generated.PokedexType;
 import generated.PokemonType;
 
 import javax.xml.bind.JAXBException;
@@ -31,7 +30,9 @@ public class MainPokemon {
     }
 
     //ESte metodo añade un Pokemeon al xml
+    //para generar los type he utilizado el comando xjc pokemons.xsd
     private static void AfegirPokemon() {
+
         //variables
         Scanner teclat = new Scanner(System.in);
         File f1 = new File("pokemons.xml");
@@ -42,23 +43,27 @@ public class MainPokemon {
         PokemonType poke = new PokemonType ();
         NombreType nombreType= new NombreType();
 
-
+        //se saca el nombre y la clase de nombre type
         System.out.println("Nombre del pokemon");
         nombreType.setValue(teclat.nextLine());
         System.out.println("Clase del pokemon");
         nombreType.setClasse(teclat.nextLine());
-
         poke.setNombre(nombreType);
 
         //Esto te dara el nombre
         poke.getNombre().getValue();
 
-        //System.out.println("Autor");
-        // info = teclat.next();
-        // l2.setAutor(info);
-        // System.out.println("Fecha del libro");
-        //info = teclat.next();
-        //l2.setTitulo(info);
+        //El resto se saca de Pokemon type
+        System.out.println("Ataque 1");
+        poke.setAtaque1(teclat.nextLine());
+        System.out.println("Ataque 2");
+        poke.setAtaque2(teclat.nextLine());
+        System.out.println("Etapa");
+        poke.setEtapa(teclat.nextLine());
+
+        //Guardamos el pokemon
+        File flg = new File("pokemons2.xml");
+        
 
 
     }
